@@ -14,10 +14,16 @@
 
 ### 运行截图	
 
+现在我们用这个爬虫抓取一下携程网的酒店数据，看看效果如何。
+
+携程的酒店是按城市归类的，从每个城市又链接到了下属所有酒店，国内的城市大约有300多个，仅北京一个市的酒店数据就有9000多个，所以我要先抓下边这页面里的城市名称及城市URL地址。
 ![携程网城市列表](https://github.com/coldicelion/Simple-Web-Crawler/blob/master/Wesley.Crawler.SimpleCrawler/Images/1.%E6%90%BA%E7%A8%8B%E7%BD%91%E5%9F%8E%E5%B8%82%E5%88%97%E8%A1%A8.png?raw=true)
 
+为了测试的需要，我们使用了代理服务器，代理参数是可选的。经测试代理IP的速度还不错，唯一不足的地方可能就是偶尔会出现连接超时，并发量少时并不需要开代理，来看看执行情况：
 ![抓取网页源代码](https://github.com/coldicelion/Simple-Web-Crawler/blob/master/Wesley.Crawler.SimpleCrawler/Images/2.%E6%8A%93%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81.png?raw=true)
 
+现在请出《正则表达式》—又简洁又高效的神器，就是学起来比较费劲。我写了个提取城市名称及URL的正则表达式，直接提取源代码中所有符合规则的数据，来看看执行情况：：
+<a[^>]+href=""*(?<href>/hotel/[^>\s]+)""\s*[^>]*>(?<text>(?!.*img).*?)</a>
 ![使用正则表达式清洗数据](https://github.com/coldicelion/Simple-Web-Crawler/blob/master/Wesley.Crawler.SimpleCrawler/Images/3.%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E6%B8%85%E6%B4%97%E6%95%B0%E6%8D%AE.png?raw=true)
 
 ![抓取城市下的酒店列表](https://github.com/coldicelion/Simple-Web-Crawler/blob/master/Wesley.Crawler.SimpleCrawler/Images/4.%E6%8A%93%E5%8F%96%E5%9F%8E%E5%B8%82%E4%B8%8B%E7%9A%84%E9%85%92%E5%BA%97%E5%88%97%E8%A1%A8.png?raw=true)
