@@ -14,12 +14,12 @@
 
 ### 运行截图	
 
-- &lt;a[^&gt;]+href=""*(?&lt;href&gt;/hotel/[^&gt;\s]+)""\s*[^&gt;]*&gt;(?&lt;text&gt;(?!.*img).*?)&lt;/a&gt;
+- 抓取城市列表
 
 ![使用正则表达式清洗数据](https://github.com/coldicelion/Simple-Web-Crawler/blob/master/Wesley.Crawler.SimpleCrawler/Images/3.%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E6%B8%85%E6%B4%97%E6%95%B0%E6%8D%AE.png?raw=true)
 
 
-- "&gt;&lt;a[^&gt;]+href="*(?&lt;href&gt;/hotel/[^&gt;\s]+)"\s*data-dopost[^&gt;]*&gt;&lt;span[^&gt;]+&gt;.*?&lt;/span&gt;(?&lt;text&gt;.*?)&lt;/a&gt;
+- 抓取酒店列表
 
 ![抓取城市下的酒店列表](https://github.com/coldicelion/Simple-Web-Crawler/blob/master/Wesley.Crawler.SimpleCrawler/Images/4.%E6%8A%93%E5%8F%96%E5%9F%8E%E5%B8%82%E4%B8%8B%E7%9A%84%E9%85%92%E5%BA%97%E5%88%97%E8%A1%A8.png?raw=true)
 
