@@ -15,7 +15,7 @@ namespace Wesley.Crawler.SimpleCrawler
     {
         static void Main(string[] args)
         {
-            //抓取城市
+            //抓取城市http://1212.ip138.com/ic.asp
             var cityUrl = "http://hotels.ctrip.com/citylist";//定义爬虫入口URL
             var cityList = new List<City>();//定义泛型列表存放城市名称及对应的酒店URL
             var cityCrawler = new SimpleCrawler();//调用刚才写的爬虫程序
@@ -48,7 +48,7 @@ namespace Wesley.Crawler.SimpleCrawler
                 Console.WriteLine("线程：" + e.ThreadId);
                 Console.WriteLine("地址：" + e.Uri.ToString());
             };
-            cityCrawler.Start(new Uri(cityUrl)).Wait();//没被封锁就别使用代理：new WebProxy("60.221.50.118", 8090)
+            cityCrawler.Start(new Uri(cityUrl)).Wait();//没被封锁就别使用代理：60.221.50.118:8090
 
             Console.ReadKey();
         }
@@ -90,6 +90,7 @@ namespace Wesley.Crawler.SimpleCrawler
     //    Console.WriteLine("线程：" + e.ThreadId);
     //    Console.WriteLine("地址：" + e.Uri.ToString());
     //};
+    //hotelCrawler.Start(new Uri(hotelUrl)).Wait();//没被封锁就别使用代理：60.221.50.118:8090
 
 
 
