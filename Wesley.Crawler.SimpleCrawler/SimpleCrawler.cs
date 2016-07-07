@@ -17,7 +17,7 @@ namespace Wesley.Crawler.SimpleCrawler
 
         public event EventHandler<OnCompletedEventArgs> OnCompleted;//爬虫完成事件
 
-        public event EventHandler<Exception> OnError;//爬虫出错事件
+        public event EventHandler<OnErrorEventArgs> OnError;//爬虫出错事件
 
         public CookieContainer CookiesContainer { get; set; }//定义Cookie容器
 
@@ -102,7 +102,7 @@ namespace Wesley.Crawler.SimpleCrawler
                 }
                 catch (Exception ex)
                 {
-                    if (this.OnError != null) this.OnError(this, ex);
+                    if (this.OnError != null) this.OnError(this, new OnErrorEventArgs(uri,ex));
                 }
                 return pageSource;
             });
