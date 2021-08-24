@@ -1,3 +1,5 @@
+ [![Maintainability](https://cloud.quality-gate.com/dashboard/api/badge?projectName=ACP-MICSIMLER&branchName=master)](https://cloud.quality-gate.com/dashboard/branches/567179#overview)
+
 # 简单且高效的网站爬虫
 
 基于C#.NET的简单网页爬虫，支持异步并发、设置代理、操作Cookie、Gzip页面加速。
